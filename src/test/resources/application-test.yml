@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:toeic_vocab_test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        default_batch_fetch_size: 50
+    show-sql: false
+    open-in-view: false
+  flyway:
+    enabled: false
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+api:
+  prefix: /api/v1
+
+toeic:
+  app:
+    jwtSecret: g0qlJwfjNUHomK4YOos9jItP5/srQ3QXbPwJjzQFfyTTKpVH+NRLFSGgErlYp3KnThZ+tXBmHms5ysdmk8WL6g==
+    jwtExpirationMs: 3600000
+    guestProgressExpirationMs: 2592000000

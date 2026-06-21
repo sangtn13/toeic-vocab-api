@@ -3,74 +3,64 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-### STS ###
+# IDE files
+.idea/
+.vscode/
 .apt_generated
 .classpath
 .factorypath
 .project
 .settings
+.settings/
 .springBeans
 .sts4-cache
-
-### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-
-### Security & Sensitive Files ###
-# Application config files with secrets
+# Security & Sensitive Files
 application.properties
 **/application-secrets.properties
-
-# Main application properties (contains sensitive data)
 src/main/resources/application.properties
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
 
 # Logs
 logs/
 *.log
 *.log.*
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.render.example
+docker-compose.override.yaml
 
-# Backup files
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary and backup files
 *.bak
 *.backup
 *.tmp
 *.temp
-
-# IDE specific files
 *.swp
 *.swo
 *~
 
-# SSL certificates and keys
+# Certificates and keys
 *.pem
 *.key
 *.crt
@@ -79,12 +69,6 @@ Thumbs.db
 
 # Docker
 .dockerignore
-docker-compose.override.yaml
-
-# Local environment files (secrets)
-.env
-.env.*
-!.env.example
 
 # Node.js dependencies (for semantic-release)
 node_modules/
@@ -94,3 +78,11 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
