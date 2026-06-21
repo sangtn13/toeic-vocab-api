@@ -35,6 +35,7 @@ docker compose up -d
 - `JWT_SECRET`
 - `JWT_EXPIRATION_MS`
 - `GUEST_PROGRESS_EXPIRATION_MS`
+- `APP_CORS_ALLOWED_ORIGIN_PATTERNS`
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD`
 - `ADMIN_NAME`
@@ -72,6 +73,8 @@ Luu y cho Spring Boot:
 - `DB_URL` tren Render can la JDBC URL, vi du `jdbc:postgresql://host:5432/database`.
 - Neu ban tao Render Postgres, hay copy Internal Database URL cua no va doi sang dinh dang JDBC truoc khi luu vao `DB_URL`.
 - `JWT_SECRET` co the de Render tu sinh qua `generateValue: true` trong `render.yaml`.
+- `APP_CORS_ALLOWED_ORIGIN_PATTERNS` can include frontend production domain, vi du `https://vocasa.vercel.app`.
+- Gia tri goi y hien tai: `http://localhost:*,http://127.0.0.1:*,https://*.ngrok-free.dev,https://vocasa.vercel.app`.
 
 Quy trinh deploy goi y:
 
@@ -102,17 +105,6 @@ Swagger:
 Tat ca ID domain trong API va database deu dung `UUID`.
 
 Chi tiet endpoint co trong [FRONTEND_API.md](/D:/toeic-vocab-api/FRONTEND_API.md).
-
-## Auth mac dinh cho local
-
-Khi app khoi dong, backend se tu seed 1 tai khoan admin neu email do chua ton tai:
-
-Gia tri mac dinh trong local:
-
-- email: `admin@toeic.local`
-- password: `admin123`
-
-JWT secret can la chuoi Base64 du manh.
 
 ## Goi y tich hop progress voi frontend
 

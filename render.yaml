@@ -19,6 +19,8 @@ services:
         value: "604800000"
       - key: GUEST_PROGRESS_EXPIRATION_MS
         value: "2592000000"
+      - key: APP_CORS_ALLOWED_ORIGIN_PATTERNS
+        value: http://localhost:*,http://127.0.0.1:*,https://*.ngrok-free.dev,https://vocasa.vercel.app
       - key: DB_URL
         sync: false
       - key: DB_USERNAME
@@ -31,3 +33,4 @@ services:
         sync: false
       - key: ADMIN_NAME
         value: System Admin
+
