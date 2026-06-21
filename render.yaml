@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: toeic-vocab-api
+    runtime: docker
+    autoDeployTrigger: commit
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: "10000"
+      - key: SERVER_PORT
+        value: "10000"
+      - key: JPA_SHOW_SQL
+        value: "false"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRATION_MS
+        value: "604800000"
+      - key: GUEST_PROGRESS_EXPIRATION_MS
+        value: "2592000000"
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_NAME
+        value: System Admin
